@@ -1,19 +1,19 @@
 {
 
-   "prefix": ".",
-   "sahip": "681250871119446025",
+   "prefix": "PREFİXİNİZ",
+   "sahip": "SAHİP ID",
 
-   "banyetkili": "832269298281611265",
+   "banyetkili": "BAN YETKİLİSİ ID",
 
-   "modlog": "MOD LOG KANAL ID",
-   "messagelog": "832269514091266149",
-   "banlog": "832269458918604802",
-   "uyarılog": "832269464686166116",
-   "kicklog": "832269462136815616",
-   "botkomut": "832269500731883581",
-   "photochat": "832269498857947176",
+   "modlog": "MOD LOG ID",
+   "messagelog": "MESSAGE LOG ID",
+   "banlog": "BAN LOG ID",
+   "uyarılog": "UYARI LOG ID",
+   "kicklog": "KİCK LOG ID",
+   "botkomut": "BOT KOMUT ID",
+   "photochat": "PHOTO CHAT ID",
 
-   "botses": "832269429370519582",
-   "tag": "Pulsé"
+   "botses": "BOT SES ID",
+   "tag": "TAGINIZ"
 
 }  
