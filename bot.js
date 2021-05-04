@@ -412,14 +412,14 @@ client.on("message", async message => {
 
 client.on("guildMemberAdd", member => {
 
-  let hosgldn = client.channels.cache.find(c => c.id === "832269438069899324")
+  let hosgldn = client.channels.cache.find(c => c.id === "HOSGELDİN-BB KANAL ID")
 
     hosgldn.send(`**${member} Aramıza Katıldı.**`)
 });
 
 client.on("guildMemberRemove", member => {
 
-  let sktrgt = client.channels.cache.find(c => c.id === "832269438069899324")
+  let sktrgt = client.channels.cache.find(c => c.id === "HOSGELDİN-BB KANAL ID")
 
    sktrgt.send(`**${member} Aramızdan Ayrıldı.**`)
 });
