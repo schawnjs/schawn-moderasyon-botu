@@ -1,1 +1,1 @@
-# schawn-moderasyon-botu
+# KISA MODERASYON BOTU
