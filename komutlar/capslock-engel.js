@@ -55,7 +55,7 @@ exports.run = function (client, message, args) {
   exports.conf = {
   enabled: true,
   guildOnly: false, 
-  aliases: ["caps-engel", "caps"], 
+  aliases: ["caps-engel", "caps", "capslock-engel"], 
   permLevel: 0 
 };
 

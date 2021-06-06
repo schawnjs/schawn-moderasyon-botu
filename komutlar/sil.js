@@ -3,16 +3,21 @@ const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
 
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Bu komutu kullanmak için **Mesajları Yönet** yetkisine sahip olmalısın.") // scháwn
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Bu komutu kullanmak için **Mesajları Yönet** yetkisine sahip olmalısın.") // scháwn
      .then(x => x.delete({ timeout: 5000 }))
 
-   if(isNaN(args)) return message.channel.send("**Sadece Sayı Girermisin?**")
+  const sil = args[0];
 
-   if(args[0] < 2) return message.reply("\`2\` **Adetten Az Mesaj Silemezsin!**")
-   if(args[0] > 100) return message.reply("\`100\` **Adetten Fazla Mesaj Silemezsin!**")
-   message.channel.bulkDelete(Number(args[0]))
+   if(isNaN(sil)) return message.channel.send("Sadece Sayı Gir.")
 
-      return message.channel.send(`**Başarıyla \`${args[0]}\` Adet Mesajı Sildin!**`)
+   if(sil < 2) return message.reply("\`2\` Adetten Az Mesaj Silemezsin!")
+   .then(x => x.delete({ timeout: 5000 }))
+   if(sil > 100) return message.reply("\`100\` Adetten Fazla Mesaj Silemezsin!")
+   .then(x => x.delete({ timeout: 5000 }))
+
+    message.channel.bulkDelete(sil)
+
+      return message.channel.send(`Başarıyla \`${sil}\` Adet Mesajı Sildin!`)
        .then(x => x.delete({ timeout: 5000 }))  
      }
 
@@ -25,5 +30,3 @@ exports.conf = {
 exports.help = {
   name: "sil"
 };
-
-

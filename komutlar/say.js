@@ -1,28 +1,28 @@
 const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
-const db = require("quick.db");
 
 exports.run = (client, message, args) => {
 
-if(!message.member.hasPermission("ADMINISTRATOR")) return;
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Bu Komutu Kullanabilmek İçin **Mesajları Yönet** Yetkisine Sahip Olmanız Gerekiyor.")
 
   let tag = ayarlar.tag;
   let tagg = message.guild.members.cache.filter(t => t.user.username.includes(tag)).size;
 
-  let toplam = message.guild.memberCount;
   let aktif = message.guild.members.cache.filter(a => a.presence.status !== "offline").size;
 
-  const sesGanalları = message.guild.channels.cache.filter(c => c.type === "voice")
+  let toplam = message.guild.memberCount;
+
+  const seskanallari = message.guild.channels.cache.filter(c => c.type === "voice")
   let count = 0;
 
-  for (const [id,voiceChannel] of sesGanalları)
-    count += voiceChannel.members.size;
+  for (const [id,voiceChannel] of seskanallari) 
+  count += voiceChannel.members.size;
 
   let boost = message.guild.premiumSubscriptionCount;
 
   let schawn = new Discord.MessageEmbed()
    .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }))
-   .setColor("RANDOM")
+   .setColor("#06001f")
    .setDescription(`
 
   **\`>\`** Sunucuda toplam **${toplam}** üye var (**${aktif}** tanesi aktif)
@@ -30,10 +30,8 @@ if(!message.member.hasPermission("ADMINISTRATOR")) return;
   **\`>\`** Sunucudaki sesli sohbetlerde **${count}** üye bulunmakta.
   **\`>\`** Sunucuya toplam **${boost}** adet boost basılmış.`)
 
-    .setFooter("schâwn ❤️ Pulsé")
+    .setFooter("schâwn ❤️ Lawertz")
     return message.channel.send(schawn);
-
-
  } // schâwn
 
 exports.conf = {
@@ -46,4 +44,4 @@ exports.conf = {
 exports.help = {
   name: "say",
   usage: "say"
-};  
+};

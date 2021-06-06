@@ -11,24 +11,24 @@ exports.run = function (client, message, args) {
     if(!message.member.hasPermission("KİCK_MEMBERS")) return message.channel.send("Bu yetkiyi kullanabilmek için **Üyeleri At** yetkisine sahip olmalısın.")
 
       let knl = ayarlar.botkomut;
-      let scháwn = message.mentions.users.first() || message.guild.members.cache.get(args[0]); // scháwn
+      let schawn = message.mentions.users.first() || message.guild.members.cache.get(args[0]); // schâwn
       let sebep = args.slice(1).join(' ') || "Sebep Belirtilmemiş";
       let kickkanal = ayarlar.kicklog;
 
-      if(message.channel.id !== knl) return message.reply("**Bu Komutu Sadece \`Bot Komut\` Kanalında Kullanabilirsin!**")
+      if(message.channel.id !== knl) return message.reply("Bu Komutu Sadece <#847578740925923348> Kanalında Kullanabilirsin!")
 
-      if(!scháwn) return message.channel.send("**Kickleyeceğin Kişiyi Belirtirmisin?**")  // scháwn
+      if(!schawn) return message.reply("Kickleyeceğin Kişiyi Belirtirmisin?")  // schâwn
 
-      if(!sebep) return message.channel.send("**Kickleme Sebebini Belirtirmisin?**")
+      if(!sebep) return message.reply("Kickleme Sebebini Belirtirmisin?")
 
-      if(scháwn.id === message.author.id) return message.channel.send("**Kendini Kickleyemezsin!**")
+      if(schawn.id === message.author.id) return message.reply("Kendini Kickleyemezsin!")
 
-      if(!message.guild.member(scháwn).kickable) return message.channel.send("**Bu Kişiyi Kickleyemezsin!**")
+      if(!message.guild.member(schawn).kickable) return message.reply("Bu Kişiyi Kickleyemezsin!")
 
         
-        message.guild.member(scháwn).kick(sebep)
+        message.guild.member(schawn).kick(sebep) // kullanıcı kicklendi
 
-        message.react("✅").then(() => {
+        message.react("<a:schawntik:834484844876398622>").then(() => {
           setTimeout(() => {
     
           message.delete()
@@ -37,22 +37,22 @@ exports.run = function (client, message, args) {
             
          const kicklendi = new Discord.MessageEmbed()
          .setAuthor(message.author.tag, message.author.avatarURL())
+         .setTitle("Sunucudan Bir Kullanıcı Kicklendi!")
          .setColor("0x348f36")
          .setDescription(`
            
               Kickleyen Yetkili » ${message.author} (\`${message.author.id}\`)
-              Kicklenen Kullanıcı » ${scháwn} (\`${scháwn.id}\`)
+              Kicklenen Kullanıcı » ${schawn} (\`${schawn.id}\`)
               Sebep » \`${sebep}\`
-              Tarih  \`${moment(Date.now()).format("HH:mm:ss DD MMMM YYYY")}\`
+              Tarih » \`${moment(Date.now()).format("HH:mm:ss DD MMMM YYYY")}\`
 
             `)
-         .setFooter("scháwn ❤️ Pulsé")
+         .setFooter("schâwn ❤️ Lawertz")
          .setTimestamp()
          
          client.channels.cache
          .get(kickkanal)
          .send(kicklendi)
-         
   }
 
 exports.conf = {
@@ -66,4 +66,3 @@ exports.help = {
   name: 'kick',
   usage: 'kick'
 };
-  

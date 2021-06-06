@@ -56,7 +56,7 @@ exports.run = function (client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["saas", "sa-as"],
+  aliases: ["saas", "sa-as", "sa-as-engel", "sa-asengel"],
   permLevel: 0
 };
 

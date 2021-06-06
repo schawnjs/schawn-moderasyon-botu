@@ -11,47 +11,34 @@ exports.run = async (client, message, args) => {
     let kullanıcı = message.guild.members.cache.get(message.author.id);
     const b = kullanıcı.displayName;
 
-    await db.set(
-      `afkSebep_${message.author.id}_${message.guild.id}`,
-      "Sebep Girilmemiş"
-    );
-    await db.set(
-      `afkid_${message.author.id}_${message.guild.id}`,
-      message.author.id
-    );
+    await db.set(`afkSebep_${message.author.id}_${message.guild.id}`,"Sebep Girilmemiş");
+    await db.set(`afkid_${message.author.id}_${message.guild.id}`, message.author.id);
     await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);
 
-    const scháwn = await db.fetch(
-      `afkSebep_${message.author.id}_${message.guild.id}`
-    );
+    const schawn = await db.fetch(`afkSebep_${message.author.id}_${message.guild.id}`);
 
-    message.channel.send(
-      new MessageEmbed()
+    message.channel.send(new MessageEmbed()
         .setColor("BLACK")
-        .setDescription(`Afk moduna geçiş yaptın.\n\nAfk Olma Sebebin: **${scháwn}**`));
+        .setDescription(`Afk moduna geçiş yaptın.\n\nAfk Olma Sebebin: **${schawn}**`));
 
     message.member.setNickname(`[AFK] ` + b);
   }
 
   if (args[0]) {
+
     let sebep = args.join(" ");
     let kullanıcı = message.guild.members.cache.get(message.author.id);
     const b = kullanıcı.displayName;
+    
     await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);
-    await db.set(
-      `afkid_${message.author.id}_${message.guild.id}`,
-      message.author.id
-    );
+    await db.set(`afkid_${message.author.id}_${message.guild.id}`,message.author.id);
     await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);
-    const scháwn = await db.fetch(
-      `afkSebep_${message.author.id}_${message.guild.id}`
-    );
 
-    message.channel.send(
-      new MessageEmbed()
+    const schawn = await db.fetch(`afkSebep_${message.author.id}_${message.guild.id}`);
+
+    message.channel.send(new MessageEmbed()
         .setColor("BLACK")
-        .setDescription(
-          `${kullanıcı} Afk moduna ge.iş yaptın.\n\nAfk Olma Sebebin: **${scháwn}**`));
+        .setDescription(`${kullanıcı} Afk moduna geçiş yaptın.\n\nAfk Olma Sebebin: **${schawn}**`));
 
     message.member.setNickname(`[AFK] ` + b);
   }
@@ -60,7 +47,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["afk"],
   permLevel: 0
 };
 

@@ -1,19 +1,24 @@
 {
 
-   "prefix": "PREFİXİNİZ",
-   "sahip": "SAHİP ID",
+   "prefix": ".",
+   "sahip": "681250871119446025",
 
-   "banyetkili": "BAN YETKİLİSİ ID",
+   "banhammer": "847578555247755268",
+   "mutehammer": "847578556439724044",
 
-   "modlog": "MOD LOG ID",
-   "messagelog": "MESSAGE LOG ID",
-   "banlog": "BAN LOG ID",
-   "uyarılog": "UYARI LOG ID",
-   "kicklog": "KİCK LOG ID",
-   "botkomut": "BOT KOMUT ID",
-   "photochat": "PHOTO CHAT ID",
+   "muterol": "847578563703341056",
 
-   "botses": "BOT SES ID",
-   "tag": "TAGINIZ"
+   "modlog": "848167110920110090",
+   "messagelog": "847578755794599947",
+   "banlog": "847578697733374033",
+   "mutelog": "847578705785258014",
+   "uyarılog": "847578702929068032",
+   "kicklog": "847578700840304690",
+   
+   "botkomut": "850793635813654588",
+   "photochat": "847578739080298506",
+
+   "botses": "847578673187651655",
+   "tag": "ተ"
 
 }  

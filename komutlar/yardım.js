@@ -5,27 +5,25 @@ exports.run = async (client, message, args) => {
 
      const schawn = new Discord.MessageEmbed()
       .setColor("#00ffeb")
-      .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }))
       .setDescription(` 
       
-    **__Yetkili Komutları:__**
+    **Yetkili Komutları:**
 
-     \`${prefix}ban\`  **Kullanıcıyı Sunucudan Banlarsınız.**
-     \`${prefix}unban\`  **Kullanıcının Sunucudaki Banını Açarsınız.**
-     \`${prefix}kick\`  **Kullanıcıyı Sunucudan Kicklersiniz.**
-     \`${prefix}uyar\`  **Kullanıcıyı Özelden Uyarırsınız.**,
-     \`${prefix}sil\`  **Belirttiğiniz Adet Mesajı Silersiniz.**
-     \`${prefix}isim-değiştir\`  **Kullanıcının İsmini Değiştirirsiniz.**
+     \`${prefix}ban:\` **\`Kullanıcıyı Sunucudan Banlarsınız.\`**
+     \`${prefix}unban:\` **\`Kullanıcının Sunucudaki Banını Açarsınız.\`**
+     \`${prefix}mute:\` **\`Kullanıcıya Süreli Mute Atarsınız.\`**
+     \`${prefix}kick:\` **\`Kullanıcıyı Sunucudan Kicklersiniz.\`**
+     \`${prefix}uyar:\` **\`Kullanıcıyı Özelden Uyarırsınız.\`**
+     \`${prefix}sil:\` **\`Belirttiğiniz Adet Mesajı Silersiniz.\`**
+     \`${prefix}vip:\` **\`Özel Kişiye Verilen Roldür.\`**
+     \`${prefix}rol-bilgi:\` **\`Etiketlenen Rol Bilgilerine Bakarsınız.\`**
+     \`${prefix}herkeserol-ver:\` **\`Etiketlediğiniz Rolü Sunucudaki Üyelere Dağıtır.\`**
+     \`${prefix}snipe:\` **\`Silinen Son Mesaja Bakarsınız.\`**
+     \`${prefix}tag-tarama:\` **\`Belirttiğiniz Tagdaki Üyeleri Gösterir.\`**
+     \`${prefix}ban-bilgi:\` **\`ID'si Girilen Kullanıcının Ban Geçmişine Bakarsınız.\`**
 
-  **__Ayarlamalı Komutlar:__**
-
-   \`${prefix}küfür-engel\`  **${prefix}küfür-engel aç/kapat**
-   \`${prefix}reklam-engel\`  **${prefix}reklam-engel aç/kapat**
-   \`${prefix}ever-here-engel\`  **${prefix}ever-here-engel aç/kapat**
-   \`${prefix}capslock-engel\`  **${prefix}capslock-engel aç/kapat**
- 
       `)
-      .setFooter("scháwn ❤️ Pulsé")
+      .setFooter("schâwn ❤️ Lawertz")
         return message.channel.send(schawn);
   }
 
@@ -40,4 +38,3 @@ exports.help = {
   name: 'yardım',
   usage: 'yardım'
 };
-  

@@ -3,16 +3,14 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = function (client, message, args) {
 
+    let schawn = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
     let phto = ayarlar.photochat;
 
-    if(message.channel.id !== phto) return message.channel.send("**Bu Komutu Sadece \`Photo Chat\` Kanalında Kullanabilirsin!**")
-
-    let schawn = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
-
+    if(message.channel.id !== phto) return message.channel.send("Bu Komutu Sadece <#847578739080298506> Kanalında Kullanabilirsin!")
+    
     const avatar = new Discord.MessageEmbed()
      .setColor("RANDOM")
-     .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }))
-     .setTitle("» Avatarın!")
+     .setDescription(`**Avatarın Aşağıda.**`)
      .setImage(schawn.avatarURL({ dynamic: true, format: "png", size: 1024 })) // eğer kullanıcının nitrosu varsa hareketli göstermesini sağlar  
        return message.channel.send(avatar);
   }

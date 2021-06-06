@@ -49,7 +49,7 @@ exports.run = async (client, message, args) => {
  exports.conf = {
   enabled: true,
   guildOnly: false, 
-  aliases: ["ever-engel", "ever"], 
+  aliases: ["ever-engel", "ever", "ever-here-engel"], 
   permLevel: 0 
 };
 

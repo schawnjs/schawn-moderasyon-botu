@@ -55,4 +55,4 @@ exports.conf = {
 exports.help = {
   name: "küfür-engel",
   usage: "küfür-engel"
-};  
+};
